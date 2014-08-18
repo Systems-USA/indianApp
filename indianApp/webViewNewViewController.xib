@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="webViewNewViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="pur-oY-IXd" id="ZBm-jP-x97"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TH3-Jn-YTr">
+                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <items>
+                        <barButtonItem systemItem="rewind" id="8Kk-uI-Jmn">
+                            <color key="tintColor" red="0.98039215690000003" green="0.36862745099999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goBack" destination="pur-oY-IXd" id="b07-6r-3PG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="53" style="plain" systemItem="fixedSpace" id="3hq-5i-w8m"/>
+                        <barButtonItem systemItem="fastForward" id="72S-5B-IFm">
+                            <color key="tintColor" red="0.98039215690000003" green="0.36862745099999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goForward" destination="pur-oY-IXd" id="B3s-bw-cSp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="62" style="plain" systemItem="fixedSpace" id="EgX-gT-TXi"/>
+                        <barButtonItem systemItem="refresh" id="hWJ-8c-Wbe">
+                            <color key="tintColor" red="0.98039215690000003" green="0.36862745099999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="reload" destination="pur-oY-IXd" id="wZW-7p-MaK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="60" style="plain" systemItem="fixedSpace" id="CD2-8F-uhE"/>
+                        <barButtonItem systemItem="action" id="5Xt-2E-EAi">
+                            <color key="tintColor" red="0.98039215690000003" green="0.36862745099999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="shareUrl:" destination="-1" id="YbA-fo-ddL"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pur-oY-IXd">
+                    <rect key="frame" x="0.0" y="62" width="320" height="462"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

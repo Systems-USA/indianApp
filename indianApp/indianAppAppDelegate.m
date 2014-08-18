@@ -13,6 +13,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    //UIColor *backColor = [UIColor colorWithRed:252.0f/255.0f green:154.0f/255.0f blue:36.0f/255.0f alpha:1.0f];
+    
+    UIColor *backColor = [UIColor colorWithRed:250.0f/255.0f green:94.0f/255.0f blue:29.0f/255.0f alpha:1.0f];
+    
+    [[UINavigationBar appearance] setTintColor:backColor];
+    
+    
+    
+//    self.navigationController.navigationBar.barTintColor = backColor;
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     return YES;
 }
 							
