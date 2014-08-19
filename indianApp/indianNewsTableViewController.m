@@ -295,6 +295,9 @@
     }
     else{
         //no action required...
+        cell.imgNews.image = [UIImage imageNamed:@"newsImage.png"];
+        cell.imgNews.layer.borderWidth = 0;
+        
         [cell.activityIndicator setHidden:YES];
         [cell.imgNews setAlpha:1.0];
     }

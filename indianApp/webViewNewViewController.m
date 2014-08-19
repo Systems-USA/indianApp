@@ -46,6 +46,11 @@
     [self.webView setDelegate:self];
     [self loadWebSite:urlWebSite];
     
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
+    [swipeRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    
+    [self.view addGestureRecognizer:swipeRight];
+    
 }
 
 -(void)dismiss{
