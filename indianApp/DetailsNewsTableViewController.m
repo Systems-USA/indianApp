@@ -45,6 +45,14 @@
     
     UIColor *backColor = [UIColor colorWithRed:250.0f/255.0f green:94.0f/255.0f blue:29.0f/255.0f alpha:1.0f];
     self.navigationController.navigationBar.barTintColor = backColor;
+    
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
+    [swipeRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    
+    [self.view addGestureRecognizer:swipeRight];
+    
+    
 }
 
 -(void)dismiss{
