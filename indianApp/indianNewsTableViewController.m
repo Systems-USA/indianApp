@@ -175,7 +175,14 @@
         title = [element valueForKey:@"titleNoFormatting"];
         publisher = [element valueForKey:@"publisher"];
         content = [element valueForKey:@"content"];
-        date = [[element valueForKey:@"publishedDate"] substringToIndex:17];
+        
+        if ([[element valueForKey:@"publishedDate"] length] > 17) {
+            date = [[element valueForKey:@"publishedDate"] substringToIndex:17];
+        }
+        else{
+            date = [element valueForKey:@"publishedDate"];
+        }
+        
         url = [element valueForKey:@"unescapedUrl"];
         
         if ([element objectForKey:@"image"]) {
@@ -243,8 +250,12 @@
     NSString *titleTmp = [[dicTmp valueForKey:@"newsTitle"] stringByStrippingHTML];
     NSString *contentTmp = [[dicTmp valueForKey:@"newsContent"] stringByStrippingHTML];
     
-    cell.lblTitleNews.text = [titleTmp substringToIndex:20];
-    cell.lblContentNews.text = [contentTmp substringToIndex:94];
+    if ([titleTmp length] > 20) {cell.lblTitleNews.text = [titleTmp substringToIndex:20];}
+    else{cell.lblTitleNews.text = titleTmp;}
+    
+    if ([contentTmp length]>94) {cell.lblContentNews.text = [contentTmp substringToIndex:94];}
+    else{cell.lblContentNews.text = contentTmp;}
+    
     
     //Store images in the array...
     [arrImages addObject:cell.imgNews.image];

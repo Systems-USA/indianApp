@@ -36,11 +36,12 @@
     
 }
 
-
+/**
+ *  Set up the inital view
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
     self.view.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
@@ -50,8 +51,6 @@
     [self.tableView setScrollEnabled:NO];
     
     _menuItems = @[@"title", @"profile", @"home", @"settings", @"contact", @"invite"];
-    
-    
     
 
 }
