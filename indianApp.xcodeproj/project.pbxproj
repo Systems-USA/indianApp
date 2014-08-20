@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5720D8AA19A4ECE20001F53F /* Conexion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5720D8A919A4ECE20001F53F /* Conexion.m */; };
 		BE28A6F8194033CD00C050BD /* classified@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE28A6F2194033CD00C050BD /* classified@2x.jpg */; };
 		BE28A6F9194033CD00C050BD /* events@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE28A6F3194033CD00C050BD /* events@2x.jpg */; };
 		BE28A6FA194033CD00C050BD /* food@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE28A6F4194033CD00C050BD /* food@2x.jpg */; };
@@ -117,6 +118,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5720D8A819A4ECE20001F53F /* Conexion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conexion.h; sourceTree = "<group>"; };
+		5720D8A919A4ECE20001F53F /* Conexion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conexion.m; sourceTree = "<group>"; };
 		BE28A6F2194033CD00C050BD /* classified@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "classified@2x.jpg"; sourceTree = "<group>"; };
 		BE28A6F3194033CD00C050BD /* events@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "events@2x.jpg"; sourceTree = "<group>"; };
 		BE28A6F4194033CD00C050BD /* food@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "food@2x.jpg"; sourceTree = "<group>"; };
@@ -270,6 +273,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5720D8A719A4ECE20001F53F /* Conexion */ = {
+			isa = PBXGroup;
+			children = (
+				5720D8A819A4ECE20001F53F /* Conexion.h */,
+				5720D8A919A4ECE20001F53F /* Conexion.m */,
+			);
+			path = Conexion;
+			sourceTree = "<group>";
+		};
 		BE28A7351942318F00C050BD /* DetailCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +403,7 @@
 		BE91A774191B4B170088BCCF /* indianApp */ = {
 			isa = PBXGroup;
 			children = (
+				5720D8A719A4ECE20001F53F /* Conexion */,
 				BE8B54B819442BD100AEC5FE /* imagesApp */,
 				BE91A7AC191B52E90088BCCF /* Sections */,
 				BE91A77D191B4B170088BCCF /* indianAppAppDelegate.h */,
@@ -766,6 +779,7 @@
 				BE91A7C1191B5BC80088BCCF /* ProfileViewController.m in Sources */,
 				BE8B54BE19443E8800AEC5FE /* webViewNewViewController.m in Sources */,
 				BE32CF57192154490091F1C9 /* templesMapViewController.m in Sources */,
+				5720D8AA19A4ECE20001F53F /* Conexion.m in Sources */,
 				BE28A743194231EE00C050BD /* DetailThirdTableViewCell.m in Sources */,
 				BE91A7C7191B5BF60088BCCF /* ContactViewController.m in Sources */,
 				BE28A71A19418BA100C050BD /* NewsTableViewCell.m in Sources */,
