@@ -85,18 +85,12 @@
     [paintView addSubview:progress];
     [self.view addSubview:paintView];
     
-#warning Append url with the search... (New Delhi)
+
     NSMutableDictionary *dicc = [NSMutableDictionary dictionary];
-    
     dicc = [[Singleton sharedCenter]returnUserInfo];
     
-    NSLog(@"The dictionary is: %@", dicc);
-    
     NSString *cityFilter = [dicc valueForKey:@"originalCity"];
-    
     cityFilter = [cityFilter stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
-    //NSString *stringConnection = @"https://ajax.googleapis.com/ajax/services/search/news?v=1.0&rsz=8&q=New%20Delhi";
     
     NSString *stringConnection = @"https://ajax.googleapis.com/ajax/services/search/news?v=1.0&rsz=8&q=";
     
