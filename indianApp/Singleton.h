@@ -22,4 +22,11 @@
 
 -(NSMutableDictionary *)returnUserInfo;
 
+-(NSMutableDictionary *)loadSetting:(id)setting withKey:(NSString *)settingKey;
+
+-(void)saveSetting:(id)setting withKey:(NSString *)settingKey;
+
+-(id)getSettingWithKey:(NSString *)settingKey;
+
+
 @end

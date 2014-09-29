@@ -38,12 +38,17 @@
 
 - (IBAction)setSingleton:(id)sender;
 
+- (IBAction)changeDistanceUnit:(id)sender;
+
+
 
 @property (weak, nonatomic) IBOutlet UITextField *txtCurrentCity;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *txtOriginalCity;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *distanceUnitSgc;
 
+@property (weak, nonatomic) IBOutlet UISlider *distanceSliderSld;
 
 @end

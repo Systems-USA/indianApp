@@ -7,6 +7,9 @@
 //
 
 #import "Singleton.h"
+#import "GeneralConstants.h"
+
+
 
 @implementation Singleton
 
@@ -38,8 +41,10 @@ static Singleton *sharedSingleton = nil;
     
     userInfo = [NSMutableDictionary dictionary];
     
-    [userInfo setValue:@"New Delhi" forKey:@"originalCity"];
-    [userInfo setValue:@"Detroit" forKey:@"currentCity"];
+    [userInfo setValue:@"New Delhi" forKey:k_Settings_Original_City];
+    [userInfo setValue:@"Detroit" forKey:k_Settings_Current_City];
+    [userInfo setValue:k_Settings_Distance_Unit_Key_Miles forKey:k_Settings_Distance_Unit];
+    [userInfo setValue:[NSNumber numberWithDouble:k_Settings_Distance_Unit_Max_Value_Miles] forKey:k_Settings_Distance_Long];
     
     return userInfo;
 }
@@ -54,9 +59,7 @@ static Singleton *sharedSingleton = nil;
     return self;
 }
 
--(void)customMethod{
-    
-}
+
 
 -(NSMutableDictionary *)loadSettings:(NSMutableDictionary *)dictDetails{
     
@@ -68,6 +71,18 @@ static Singleton *sharedSingleton = nil;
     
     return userInfo;
 
+}
+
+-(void)saveSetting:(id)setting withKey:(NSString *)settingKey{
+    
+    [userInfo setObject:setting forKey:settingKey];
+
+}
+
+-(id)getSettingWithKey:(NSString *)settingKey{
+    
+    return [userInfo objectForKey:settingKey];
+    
 }
 
 -(NSMutableDictionary *)returnUserInfo{

@@ -14,11 +14,17 @@
 
 
 #import "indianNewsTableViewController.h"
+#import "TemplesListVC.h"
 
 
-static NSString *kCell=@"cell";
+
+
+static NSString *kCell = @"cell";
 
 #define PARALLAX_ENABLED 1
+
+
+
 
 @interface HomeViewController ()
 
@@ -89,6 +95,8 @@ static NSString *kCell=@"cell";
     
     [self.view addSubview:_collectionView];
     
+    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    
 }
 
 
@@ -142,12 +150,36 @@ static NSString *kCell=@"cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
     //Load news view...
-    indianNewsTableViewController *newsController = [[indianNewsTableViewController alloc] initWithNibName:@"indianNewsTableViewController" bundle:nil];
-    
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:newsController];
-    
-    [self presentViewController:navController animated:YES completion:nil];
+//    indianNewsTableViewController *newsController = [[indianNewsTableViewController alloc] initWithNibName:@"indianNewsTableViewController" bundle:nil];
+//    
+//    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:newsController];
+//    
+//    [self presentViewController:navController animated:YES completion:nil];
 
+    
+    if (indexPath.row != 1) {
+        
+        indianNewsTableViewController *newsController = [[indianNewsTableViewController alloc] initWithNibName:@"indianNewsTableViewController" bundle:nil];
+        
+        UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:newsController];
+        
+        [self presentViewController:navController animated:YES completion:nil];
+        
+    }
+    else{
+        
+        NSLog(@"Templos");
+        
+        TemplesListVC *newsController = [[TemplesListVC alloc] initWithNibName:@"TemplesListVC" bundle:nil];
+        
+        UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:newsController];
+        
+        [self presentViewController:navController animated:YES completion:nil];
+        
+        
+    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

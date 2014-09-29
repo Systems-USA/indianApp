@@ -9,8 +9,13 @@
 #import "SettingsViewController.h"
 #import "SWRevealViewController.h"
 #import "SettingsTableViewCell.h"
-
 #import "Singleton.h"
+
+
+#import "GeneralConstants.h"
+
+
+
 
 @interface SettingsViewController ()
 
@@ -59,12 +64,25 @@
     
     self.lblCurrentCity.text = [diccInfo valueForKey:@"currentCity"];
     
+    Singleton *theSingleton = [Singleton sharedCenter];
+    NSLog(@"distance unit: %@", [theSingleton getSettingWithKey:k_Settings_Distance_Unit]);
+    
+    if ([[theSingleton getSettingWithKey:k_Settings_Distance_Unit] isEqualToString:k_Settings_Distance_Unit_Key_KM]) {
+        [_distanceUnitSgc setSelectedSegmentIndex:0];
+    }
+    else if ([[theSingleton getSettingWithKey:k_Settings_Distance_Unit] isEqualToString:k_Settings_Distance_Unit_Key_Miles]) {
+        [_distanceUnitSgc setSelectedSegmentIndex:1];
+    }
+    
 }
 
 
 -(IBAction)sliderValueChanged:(id)sender{
     
-    self.averageIndicator.text = [NSString stringWithFormat:@"%dmi.", (int)self.sliderAverage.value];
+    self.averageIndicator.text = [NSString stringWithFormat:@"%f", self.sliderAverage.value];
+    
+    Singleton *theSingleton = [Singleton sharedCenter];
+    [theSingleton saveSetting:[NSNumber numberWithFloat:_sliderAverage.value] withKey:k_Settings_Distance_Long];
     
 }
 
@@ -145,7 +163,7 @@
     [diccTmp setValue:cityOriginal forKey:@"originalCity"];
     [diccTmp setValue:cityCurrent forKey:@"currentCity"];
     
-    [[Singleton sharedCenter]loadSettings:diccTmp];
+    [[Singleton sharedCenter] loadSettings:diccTmp];
     
     
     //Also load the NSUserDefaults..
@@ -169,6 +187,31 @@
     }
      */
     
+}
+
+- (IBAction)changeDistanceUnit:(id)sender{
+
+    UISegmentedControl *segmentedCtrl = sender;
+    
+    Singleton *theSingleton = [Singleton sharedCenter];
+    
+    
+    if (segmentedCtrl.selectedSegmentIndex == 0) {
+        
+        [theSingleton saveSetting:k_Settings_Distance_Unit_Key_KM withKey:k_Settings_Distance_Unit];
+        
+        
+        
+        [_distanceSliderSld setMaximumValue:k_Settings_Distance_Unit_Max_Value_KM];
+
+    }
+    else if (segmentedCtrl.selectedSegmentIndex == 1) {
+        
+        [theSingleton saveSetting:k_Settings_Distance_Unit_Key_Miles withKey:k_Settings_Distance_Unit];
+        [_distanceSliderSld setMaximumValue:k_Settings_Distance_Unit_Max_Value_Miles];
+        
+    }
+
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
